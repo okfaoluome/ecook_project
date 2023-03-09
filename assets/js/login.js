@@ -33,7 +33,7 @@
 
 
     /* 设置axios统一基地址 */
-    axios.defaults.baseURL = 'http://www.liulongbin.top:3007'
+    axios.defaults.baseURL = 'http://127.0.0.1:3007'
 
     //监听注册表单提交
     document.querySelector('#form_reg').addEventListener('submit', function (e) {
@@ -46,9 +46,9 @@
             url: '/api/reguser',
             method: 'post',
             data: { username: username, password: password },
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+            // headers: {
+            //     'Content-Type': 'application/x-www-form-urlencoded'
+            // }无效
         }).then(res => {
             // console.log(res)
             if (res.status !== 0) {
@@ -71,11 +71,11 @@
             url: '/api/login',
             method: 'post',
             data: { username: username, password: password },
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+            // headers: {
+            //     'Content-Type': 'application/x-www-form-urlencoded'
+            // }
         }).then(res => {
-            // console.log(res)
+            console.log(res)
             if (res.status !== 0) {
                 return layer.msg(res.data.message);
             }
