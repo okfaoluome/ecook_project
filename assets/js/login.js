@@ -51,10 +51,10 @@
             // }无效
         }).then(res => {
             // console.log(res)
-            if (res.status !== 0) {
+            if (res.data.status !== 0) {
                 return layer.msg(res.data.message);
             }
-            layer.msg('注册成功')
+            layer.msg(res.data.message)
             // 跳转到登录
             document.querySelector('#link_login').click()
         })
@@ -76,11 +76,11 @@
             // }
         }).then(res => {
             console.log(res)
-            if (res.status !== 0) {
+            if (res.data.status !== 0) {
                 return layer.msg(res.data.message);
             }
             localStorage.setItem('token', res.data.token)
-            layer.msg('登录成功')
+            layer.msg(res.data.message)
             // 跳转到后台主页
             location.href = '/index.html'
         })
