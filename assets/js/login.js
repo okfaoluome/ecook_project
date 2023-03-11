@@ -34,6 +34,7 @@
 
     /* 设置axios统一基地址 */
     axios.defaults.baseURL = 'http://127.0.0.1:3007'
+    // 设置统一请求头
 
     //监听注册表单提交
     document.querySelector('#form_reg').addEventListener('submit', function (e) {
@@ -75,12 +76,8 @@
             //     'Content-Type': 'application/x-www-form-urlencoded'
             // }
         }).then(res => {
-            console.log(res)
-<<<<<<< HEAD
+            // console.log(res)
             if (res.data.status !== 0) {
-=======
-            if (res.status !== 0) {
->>>>>>> 896976896e7b9719c62844d89711994a11ff37fe
                 return layer.msg(res.data.message);
             }
             localStorage.setItem('token', res.data.token)
