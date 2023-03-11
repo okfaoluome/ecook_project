@@ -34,6 +34,7 @@
 
     /* 设置axios统一基地址 */
     axios.defaults.baseURL = 'http://127.0.0.1:3007'
+    // 设置统一请求头
 
     //监听注册表单提交
     document.querySelector('#form_reg').addEventListener('submit', function (e) {
